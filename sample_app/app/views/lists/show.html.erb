@@ -1,0 +1,15 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<h2>제목</h2>
+<p><%= @list.title %></p>
+
+<h2>본문</h2>
+<p><%= @list.body %></p>
+
+<h2>이미지</h2>
+<%= image_tag @list.image, size: "300x300" %>
+
+<%= link_to "편집", edit_list_path(@list.id) %>
+<%= link_to "삭제", list_path(@list.id), method: :delete, "data-confirm" => "정말 삭제하시겠습니까?" %>
